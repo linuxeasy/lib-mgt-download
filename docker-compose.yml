@@ -1,0 +1,20 @@
+version: '3'
+services:
+  docker-mariadb:
+    image: linuxeasy/lib-mariadb:latest
+    environment:
+    - MYSQL_DATABASE=cs548_library
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+  docker-webapp:
+    image: linuxeasy/lib-mgt-jdk7:latest
+    depends_on:
+    - docker-mariadb
+    ports:
+    - 8080:8080
+    environment:
+    - jdbc.driver_class=org.mariadb.jdbc.Driver
+    - jdbc.url=jdbc:mariadb://docker-mariadb:3306/cs548_library
+    - jdbc.username=root
+    - jdbc.password=root

@@ -1,0 +1,3 @@
+FROM arungupta/oreilly-wildfly
+
+CMD echo "Welcome to Abhishek Wildfly"

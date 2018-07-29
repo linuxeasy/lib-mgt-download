@@ -1,0 +1,19 @@
+Docker Topics:
+WHY
+Docker-Machine
+-Installation
+-Create
+-start/stop
+
+Docker:
+WHAT & WHY & HOW
+docker pull
+docker build
+docker run    /-d or -i
+
+Using Dockerfile vs Not Using Dockerfiles
+
+-----------------------
+WHY & HOW
+Save docker-file into repo.
+

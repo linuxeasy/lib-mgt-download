@@ -1,0 +1,10 @@
+FROM mariadb
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends wget \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& cd /docker-entrypoint-initdb.d \
+	&& wget https://github.com/linuxeasy/lib-mgt-download/raw/master/lib-mgt.sql
+
+ENV MYSQL_DATABASE cs548_library
+ENV MYSQL_ROOT_PASSWORD root
+ENV MYSQL_ALLOW_EMPTY_PASSWORD yes
